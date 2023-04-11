@@ -22,7 +22,7 @@ export default class Youtube {
           part: "snippet",
           maxResults: 25,
           type: "video",
-          relatedVideoId: id,
+          relatedToVideoId: id,
         },
       })
       .then((res) =>
