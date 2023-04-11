@@ -4,12 +4,17 @@ export default class FakeYoutubeClient {
   //constructor() {}
 
   //async??
-  search() {
-    return axios.get("/videos/search.json");
+  search({ params }) {
+    return params.relatedToVideoId
+      ? axios.get("/videos/related.json")
+      : axios.get("/videos/search.json");
   }
 
   videos() {
     return axios.get("/videos/popular.json");
+  }
+  channels() {
+    return axios.get("/videos/channel.json");
   }
 }
 //   async #searchByKeyword(keyword) {
